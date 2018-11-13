@@ -1,32 +1,14 @@
-<div class="container">
-  <div class="row">
-    <div class="main_div col-xs-12 col-md-8">
-      <div class="main_header">
-        <div class="title_and_details">
-          <div class="title">
-            <h2><%= @event.name %></h2>
-          </div>
-          <div class="details row">
-            <p class="col-xs-12 col-md-4"><i class="fas fa-users"></i> <%= @event.party_size %>Guests</p>
-            <p class="col-xs-12 col-md-4"><i class="fas fa-calendar-alt"></i> <%= @event.date %></p>
-            <p class="col-xs-12 col-md-4"><i class="fas fa-map-marker-alt"></i> <%= @event.location %></p>
-          </div>
-        </div>
-        <div style="width:20%; padding:30px;">
-          <img src="https://picsum.photos/100/100" alt="avatar" class="avatar">
-        </div>
-      </div>
-      <div class="main_body">
-        <p><%= @event.description %></p>
-      </div>
-    </div>
-    <div class="col-xs-12 col-md-4">
-      <div class="btn btn-primary btn-lg ">
-        Bid Now!
+
+# Dropdown for avatar once user is logged in:
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Log Out</a></li>
+        </ul>
       </div>
     </div>
   </div>
-  <div class="amenities">
-    <h2><i class="fas fa-utensils"></i>Amenities</h2>
-  </div>
-</div>
+
