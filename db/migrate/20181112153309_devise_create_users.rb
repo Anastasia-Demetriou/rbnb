@@ -10,6 +10,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :last_name
       t.string :bio
       t.boolean :event_organiser
+      t.boolean :professional
       t.string :service
 
       ## Recoverable
