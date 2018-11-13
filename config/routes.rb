@@ -4,7 +4,6 @@ root to: 'pages#home'
 resources :events
   devise_for :users
 
-
   resources :users do
     resources :bids  do
       get 'bookings/show'
