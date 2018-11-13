@@ -27,12 +27,12 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = @user.event.find(params[:id])
+    @event = Event.find(params[:id])
     authorize @event
   end
 
   def update
-    @event = @user.event.find(params[:id])
+    @event = Event.find(params[:id])
     authorize @event
     if @event.update(event_params)
       flash[:success] = "Task updated!"
