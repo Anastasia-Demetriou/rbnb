@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+=======
 #   def edit
 #     @user.event_organiser = current_user(params[:event_organiser])
 #     if @user.event_organiser == true
@@ -10,6 +11,5 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
-
 
 end
