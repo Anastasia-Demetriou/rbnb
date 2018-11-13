@@ -5,9 +5,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :events
-  has_many :bids
-  has_many :bookings, through: :bids
+  has_many :events, dependent: :destroy
+  has_many :bids, dependent: :destroy
+  has_many :bookings, through: :bids, dependent: :destroy
 
   validates_presence_of :first_name, :last_name, :password, :event_organiser
   validates :email, uniqueness: { case_sensitive: false }

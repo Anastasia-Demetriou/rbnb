@@ -6,18 +6,17 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[id])
+    @event = Event.find(params[:id])
   end
 
   def new
-    @event = Event.new(event_params)
+    @event = Event.new
   end
 
   def create
-    @user = current_user
-    @event = @event = Event.new(event_params)
-    @event.user = current_user.event(params[:user_id])
+    @event = Event.new(event_params)
     if @event.save
+      flash[:success] = "Task saved!"
       redirect_to event_path(@event.user)
     else
       render :new
@@ -25,12 +24,14 @@ class EventsController < ApplicationController
   end
 
   def edit
-    if current_user.id == @event.user.id
-    @event = Event.find(event_params)
+    @event = @user.event.find(params[:id])
   end
 
   def update
-    if @event.update(event_params)
+    @event = @user.event.find(params[:id])
+    if @event.user_id == current_user.id
+      @event.update(event_params)
+      flash[:success] = "Task updated!"
       redirect_to user_path(@user)
     else
       render :edit
@@ -38,14 +39,18 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event = Event.find(params[:id])
-    event.destroy
-    redirect_to event_path
+    if @event.user_id == current_user.id
+      @event = Event.find(params[:id])
+      event.destroy
+      redirect_to event_path
+    else
+      render :destroy
+    end
   end
 
   private
 
   def event_params
-    params.require(:event).permit(:name, :date, :type, :location, :description, :party_size, :service, :price_range)
+    params.require(:event).permit(:user_id, :name, :date, :type, :location, :description, :party_size, :service, :max_price, :min_price)
   end
 end
