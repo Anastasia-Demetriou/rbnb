@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 #     else @user.event_organiser == false
 #     end
 #   end
-  
+
   def index
     @users = User.all
   end

@@ -46,4 +46,15 @@ class ApplicationPolicy
       scope.all
     end
   end
+
+  private
+
+  def event_organiser?
+    user.event_organiser
+  end
+
+  def professional?
+    user.professional
+  end
+
 end

@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
 
 
-
+resources :events
   devise_for :users
   root to: 'pages#home'
 
   resources :users do
-    resources :events
     resources :bids  do
       get 'bookings/show'
     end
