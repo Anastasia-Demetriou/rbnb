@@ -4,4 +4,27 @@ class BidPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def show?
+   true
+  end
+
+  def update?
+    record.user == user
+  end
+
+  def create?
+    professional?
+  end
+
+  def destroy?
+    record.user == user
+  end
+
+
+   private
+
+  def professional?
+    user.professional
+  end
 end
