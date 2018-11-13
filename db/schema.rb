@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2018_11_12_162315) do
     t.string "last_name"
     t.string "bio"
     t.boolean "event_organiser"
+    t.boolean "professional"
     t.string "service"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
