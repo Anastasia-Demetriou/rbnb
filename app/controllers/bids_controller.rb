@@ -7,7 +7,6 @@ class BidsController < ApplicationController
   end
 
   def show
-
   end
 
   def create
@@ -21,7 +20,7 @@ class BidsController < ApplicationController
   private
 
   def set_bid
-    @bid = Bid.find(params[:id])
+    @bid = Bid.find(params[:bid_id])
 
   end
 
