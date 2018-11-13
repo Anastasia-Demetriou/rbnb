@@ -1,13 +1,15 @@
-<div class="navbar-wagon">
-  <a href="/" class="navbar-wagon-brand">
-    <img src="images/logo.png" alt="logo">
-  </a>
+<html>
+
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Sign Up</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Log In</a>
+  <% @events.each do |event|%>
+  <h1><%= event.name %></h1>
+<% end %>
+
+
+
 
     <div class="navbar-wagon-item">
         <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar
@@ -39,3 +41,6 @@
     </div>
   </div>
 </div>
+
+</html>
+
