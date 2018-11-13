@@ -19,7 +19,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     authorize @event
     if @event.save
-      flash[:success] = "Task saved!"
+      flash[:success] = "Event saved!"
       redirect_to event_path(@event.user)
     else
       render :new
@@ -35,7 +35,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     authorize @event
     if @event.update(event_params)
-      flash[:success] = "Task updated!"
+      flash[:success] = "Event updated!"
       redirect_to user_path(@user)
     else
       render :edit

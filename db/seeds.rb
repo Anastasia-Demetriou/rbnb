@@ -12,6 +12,8 @@ Event.destroy_all
 puts "Cleared"
 
 puts "Seeding...."
+test1 = User.new(first_name: "test", last_name:"test", email:"test@test.com", password:"test123", event_organiser: false, professional: true, service:"Chef", bio:"Experienced Chef")
+test1.save!
 john = User.new(first_name: "John", last_name:"Doe", email:"johndoe@gmail.com", password:"password", event_organiser: false, professional: true, service:"Chef", bio:"Experienced Chef")
 john.save!
 andrew = User.new(first_name: "Andrew", last_name:"Smith", email:"andrewsmith@gmail.com", password:"password", event_organiser: true, professional: false, bio:"Looking for chef")
