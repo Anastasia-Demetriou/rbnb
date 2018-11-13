@@ -1,12 +1,12 @@
 class EventsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index, :show
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_bid, only: [:show, :edit, :update]
 
   def index
     @events = Event.all
   end
 
   def show
-    @event = Event.find(params[:id])
   end
 
   def new
@@ -24,11 +24,9 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = @user.event.find(params[:id])
   end
 
   def update
-    @event = @user.event.find(params[:id])
     if @event.user_id == current_user.id
       @event.update(event_params)
       flash[:success] = "Task updated!"
@@ -49,6 +47,10 @@ class EventsController < ApplicationController
   end
 
   private
+
+  def set_event
+    @event = @user.event.find(params[:id])
+  end
 
   def event_params
     params.require(:event).permit(:user_id, :name, :date, :type, :location, :description, :party_size, :service, :max_price, :min_price)
