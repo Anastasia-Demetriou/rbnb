@@ -7,7 +7,6 @@ class BidsController < ApplicationController
   end
 
   def show
-
   end
 
   def create
