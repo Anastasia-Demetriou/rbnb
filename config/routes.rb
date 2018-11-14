@@ -6,8 +6,9 @@ resources :events
 
   resources :users do
     resources :bids  do
-      get 'bookings/show'
+      resources :bookings, only: :create
     end
+    resources :bookings, only: [ :index, :show]
   end
 
 
