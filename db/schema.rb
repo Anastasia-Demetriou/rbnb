@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2018_11_12_162315) do
     t.string "description"
     t.bigint "user_id"
     t.bigint "event_id"
+    t.boolean "accepted", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_bids_on_event_id"
