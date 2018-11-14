@@ -11,13 +11,15 @@
     <% end %>
   </div>
   <div class="banner-content">
-    <%= form_tag events_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find an event"
-      %>
+  </div>
+  <div class="form_contianer">
+    <div class="form_wrapper" style="width: 500px; margin: 0 auto;"></div>
+    <h1>Search for your event</h1>
+    <%= simple_form_for :search, method: :get do |t| %>
+    <%= t.input :starts_at %>
+    <%= t.input :ends_at %>
     <% end %>
+    <%= link_to "Search", events_path, class: "btn btn-primary btn-lg" %>
   </div>
 </div>
 <div class="container">
