@@ -16,7 +16,7 @@ john = User.new(first_name: "John", last_name:"Doe", email:"johndoe@gmail.com", 
 john.save!
 andrew = User.new(first_name: "Andrew", last_name:"Smith", email:"andrewsmith@gmail.com", password:"password", event_organiser: true, professional: false, bio:"Looking for chef")
 andrew.save!
-event = Event.new(name:"Birthday Dinner", date:"13th of november", event_type: "dinner", location:"138 kingsland road", description:"Small dinner party", party_size: 3, service:"Chef", min_price: 30, max_price: 50, user_id: andrew.id)
+event = Event.new(name:"Birthday Dinner", date:"13th of november", event_type: "dinner", location:"138 kingsland road", description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus porta convallis erat, in placerat eros mattis id. Cras lectus sem, mollis sed libero nec, sagittis facilisis purus. Etiam tempus aliquam nisi ut accumsan. Quisque dictum varius magna a posuere. Suspendisse ullamcorper justo orci, sit amet suscipit ligula malesuada eu. Praesent in lorem sed odio tempor pretium eu sit amet justo", party_size: 3, service:"Chef", min_price: 30, max_price: 50, user_id: andrew.id)
 event.save!
 bid = Bid.new(user_id: john.id, event_id: event.id, price: 5, description: "Really want to do this event")
 bid.save!
