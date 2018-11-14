@@ -1,0 +1,70 @@
+.event_card{
+  // width: 150px;
+  height: 300px;
+  padding: 0px;
+}
+.event_card:hover {
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow:1px 1px 2px rgba(0,0,0,0.1) ;
+  border-radius: 2px;
+  text-decoration: none;
+}
+.card_description{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card_text{
+  font-size: 20px;
+  color: rgba(0,0,0,0.7);
+}
+.card_text:hover{
+  text-decoration: none;
+}
+.card_link:hover{
+  text-decoration: none;
+}
+a{
+  text-decoration: none;
+}
+.icon{
+  color: #6C63FF;
+}
+
+.search_bar{
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  padding: 0px;
+  margin-bottom: 50px;
+  h3{
+    font-size: 25px !important;
+  }
+}
+
+.no_padding{
+  padding: 0px;
+  margin: 0px;
+  font-size: 24px;
+}
+
+.input_field{
+  font-size: 20px;
+  opacity: 0.9;
+  background-color: #6C63FF;
+  // border: 1px solid #6C63FF;
+  border-bottom: none;
+  border-radius: 3px 3px 0px 0px;
+  color: #EFEEFF;
+  padding: 6px 10px;
+}
+
+.input_field:hover{
+  opacity: 1;
+  background-color: #6C63FF;
+}
+
+.field_holder{
+  width: 40vw;
+  display: flex;
+  justify-content: space-around;
+}
