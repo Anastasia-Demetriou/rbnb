@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 root to: 'pages#home'
+get 'professional_dashboard', to: 'pages#professional_dashboard', as: 'professional_dashboard'
+get 'event_dashboard', to: 'pages#event_dashboard', as: 'event_dashboard'
 resources :events do
   resources :bids  do
     get 'bookings/show'
