@@ -23,8 +23,13 @@
       [:ends_at],
       class: "datepicker input_margin_2",
         placeholder: "End Date"%>
-      <%= submit_tag "Search", class: "btn submit_button"%>
-      </div>
+
+      <%= text_field_tag :location,
+       params[:location],
+       placeholder: "Location",
+       class: "location_input",
+       id: "event_location" %>
+      <%= submit_tag "Search", class: " btn submit_button"%>
     <% end %>
   </div>
 </div>
