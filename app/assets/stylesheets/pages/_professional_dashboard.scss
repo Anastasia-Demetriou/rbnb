@@ -1,40 +1,49 @@
 
 .event-card {
   position: relative;
-  width: 100%;
+  width:  1100px;
   height: 200px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin-top: 100px;
-  flex-direction: column;
+  margin-top: 200px;
+  border-top:  solid 2px black;
+  border-bottom: solid 2px black;
+
 
 }
-
-img {
- margin-right: 200px;
-  height: 50px;
-  width: 50px;
+.description-style {
+  min-width: 500px;
+  line-height: 20px;
 }
-
 .mainheading {
   text-align: center;
 }
 
-.header {
-  margin-top: 50px;
-  color: #838383;
-  font-family: 'Noto Sans', sans-serif;
-  margin-left: 200px;
+.location {
+  min-width: 200px;
+  text-align: center;
+
 }
 
+.date {
+  min-width: 200px;
+}
+.type {
+  font-size: 14px;
+  text-align: center;
+}
+
+
 .event-info {
-  border: solid 1px red;
   height: 2000px;
   margin-right: 50px;
   justify-content: space-between;
   align-items: center;
   display: flex;
+  min-width: 200px;
+  margin-left: 50px
 }
 
 

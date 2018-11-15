@@ -5,7 +5,10 @@ class PagesController < ApplicationController
   end
 
   def professional_dashboard
-    @events = Event.all
+    @events = []
+    current_user.bids.each do |bid|
+      @events << bid.event
+    end
     @bookings = Booking.all
   end
 

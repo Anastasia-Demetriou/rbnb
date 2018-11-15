@@ -5,32 +5,23 @@
       <h2 class="header">Your Bids</h2>
       <% @events.each do |event| %>
       <div class="event-card">
-
         <% if event.event_type == "birthday" %>
-          <%= cl_image_tag("undraw_birthday_cake_7df8.png",
-        width: 285, height: 200, crop: :fill)%>
         <% elsif event.event_type == "dinner" %>
-          <%= cl_image_tag("undraw_eating_together_tjhx.png",
-        width: 285, height: 200, crop: :fill)%>
         <% elsif event.event_type == "party" %>
-          <%= cl_image_tag("undraw_beer_celebration_3wc8.png",
-        width: 285, height: 200, crop: :fill) %>
         <% end %>
 
         <div class="event-info">
-          <p><%= event.description %></p>
-          <p><%= event.location %></p>
-          <p><%= event.date %></p>
+          <%= link_to event.event_type, event_path(event), class: "type" %>
+          <p class= "location"> <%= event.location %></p>
+          <p class= "date"><%= event.date %></p>
+          <p class="description-style"><%= event.description %></p>
         </div>
-
-
-        <%= link_to event.event_type, event_path(event) %>
       </div>
       <% end %>
     </div>
 
 
-    <div class="col-sm-6">
+<!--     <div class="col-sm-6">
       <h2 class="header">Your Bookings</h2>
       <% @bookings.each do |booking| %>
       <div class="booking-card">
@@ -44,7 +35,7 @@
         <% end %>
       </div>
       <% end %>
-    </div>
+    </div> -->
   </div>
 </div>
 </div>
