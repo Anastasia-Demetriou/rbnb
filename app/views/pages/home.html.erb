@@ -18,13 +18,13 @@
     <%= form_tag events_path, method: :get do %>
       <%= text_field_tag :starts_at,
       params[:starts_at],
-      class: "datepicker",
+      class: "datepicker input_margin",
         placeholder: "Start Date"%>
       <%= text_field_tag :ends_at,
       [:ends_at],
-      class: "datepicker",
+      class: "datepicker input_margin",
         placeholder: "End Date"%>
-      <%= submit_tag %>
+      <%= submit_tag "Submit", class: " btn submit_button"%>
     <% end %>
   </div>
 </div>
