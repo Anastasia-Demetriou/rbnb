@@ -5,23 +5,13 @@
 
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <% if user_signed_in? %>
-      <p><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
+      <%= link_to "Bids Dashboard" %>
+      <%= link_to "My Profile" %>
+      <%= link_to "Search Events" %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
     <% else %>
-      <p><%= link_to "Login", new_user_session_path %></p>
-      <p><%= link_to "Sign up", new_user_registration_path %></p>
+      <%= link_to "Login", new_user_session_path %>
+      <%= link_to "Sign up", new_user_registration_path %>
     <% end %>
-  </div>
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <% if user_signed_in? %>
-          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-         <% else %>
-        <li><%= link_to "Login", new_user_session_path %></li>
-        <li><%= link_to "Sign up", new_user_registration_path %></li>
-        <% end %>
-      </ul>
-    </div>
   </div>
 </div>
