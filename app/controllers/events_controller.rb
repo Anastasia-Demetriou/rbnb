@@ -2,7 +2,10 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @events = policy_scope(Event).order(created_at: :desc)
+    start_date = params[:starts_at].to_date
+    end_date = params[:ends_at].to_date
+    filtered_events = Event.where('date > ? AND date < ?', start_date, end_date)
+    @events = policy_scope(filtered_events).order(created_at: :desc)
   end
 
   def show
