@@ -15,11 +15,17 @@
   <div class="form_contianer">
     <div class="form_wrapper" style="width: 500px; margin: 0 auto;"></div>
     <h1>Search for your event</h1>
-    <%= simple_form_for :search, method: :get do |t| %>
-    <%= t.input :starts_at %>
-    <%= t.input :ends_at %>
+    <%= form_tag events_path, method: :get do %>
+      <%= text_field_tag :starts_at,
+      params[:starts_at],
+      class: "datepicker",
+        placeholder: "Start Date"%>
+      <%= text_field_tag :ends_at,
+      [:ends_at],
+      class: "datepicker",
+        placeholder: "End Date"%>
+      <%= submit_tag %>
     <% end %>
-    <%= link_to "Search", events_path, class: "btn btn-primary btn-lg" %>
   </div>
 </div>
 <div class="container">
