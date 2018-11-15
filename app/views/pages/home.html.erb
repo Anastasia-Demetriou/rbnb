@@ -12,19 +12,19 @@
   </div>
   <div class="banner-content">
   </div>
-  <div class="form_contianer">
-    <div class="form_wrapper" style="width: 500px; margin: 0 auto;"></div>
-    <h1>Search for your event</h1>
+  <div class="form_container">
+    <div class="form_wrapper" style="width: 343px; height: 100px; margin: 0 auto;">
     <%= form_tag events_path, method: :get do %>
       <%= text_field_tag :starts_at,
       params[:starts_at],
-      class: "datepicker input_margin",
+      class: "datepicker input_margin_1",
         placeholder: "Start Date"%>
       <%= text_field_tag :ends_at,
       [:ends_at],
-      class: "datepicker input_margin",
+      class: "datepicker input_margin_2",
         placeholder: "End Date"%>
-      <%= submit_tag "Submit", class: " btn submit_button"%>
+      <%= submit_tag "Search", class: "btn submit_button"%>
+      </div>
     <% end %>
   </div>
 </div>
@@ -59,9 +59,6 @@
     </div>
   </div>
 </div>
-
-
-      <!-- insert <div class="card"> -->
 
 
 
