@@ -7,7 +7,7 @@ class BidsController < ApplicationController
 
   def show
     @bid = set_bid
-    authorize @bid
+    # authorize @bid
   end
 
   def new
@@ -21,7 +21,7 @@ class BidsController < ApplicationController
     @bid = Bid.new(bid_params)
     @bid.event = @event
     @bid.user = current_user
-    authorize @bid
+    # authorize @bid
     if @bid.save
       flash[:success] = "Bid saved!"
       redirect_to event_bid_path(@event, @bid)
@@ -42,15 +42,15 @@ class BidsController < ApplicationController
   end
 
   def edit
-    authorize @bid
+    # authorize @bid
   end
 
   def update
-    authorize @bid
+    # authorize @bid
   end
 
   def destroy
-    authorize @bid
+    # authorize @bid
   end
 
 end
