@@ -24,12 +24,13 @@
           <%= f.input :password_confirmation,
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
-          <%= f.input :professional %>
+          <div style= "justify-content: space-between;"><%= f.input :professional %></div>
+
         </div>
 
 
         <div class="form-actions">
-          <%= f.button :submit, "Sign up", class: " btn submit_button" %>
+          <%= f.button :submit, "Sign up", class: " btn submit_button unstyled" %>
         </div>
       <% end %>
 

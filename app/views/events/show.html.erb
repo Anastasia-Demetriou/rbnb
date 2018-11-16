@@ -20,12 +20,16 @@
         <p><%= @event.description %></p>
       </div>
     </div>
-    <div class="col-xs-12 col-lg-3 col-lg-offset-1 btn-container">
-      <% if user_signed_in? %>
-        <% if @user.professional? && user_signed_in? %>
-        <%= link_to "Bid Now", new_event_bid_path(@event),class: "btn bid-now" %>
+    <div>
+      <div class="show-bid">
+        <p>Want to make a bid?</p>
+        <% if user_signed_in? && @user.professional?   %>
+          <%= link_to "Bid Now", new_event_bid_path(@event),class: "btn bid-now unstyled button-width" %>
+        <% else %>
+          <%= link_to "Login", new_user_session_path, class: " btn submit_button unstyled button-width" %>
+          <%= link_to "Sign up", new_user_registration_path, class: " btn submit_button unstyled button-width" %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
   <div class="main_div col-xs-12 col-md-8">

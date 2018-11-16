@@ -1,15 +1,15 @@
 <div class="navbar-wagon">
   <a href="/" class="logo">
-    <img src="https://res.cloudinary.com/daitlzche/image/upload/v1542197200/Snip20181114_4.png" alt="logo">
+    <img src="https://res.cloudinary.com/alicezoepicot/image/upload/v1542379320/logo_2.png" alt="logo">
   </a>
 
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <% #if params[:action] == 'home' %>
+
     <% if user_signed_in? %>
       <p><%= link_to "Account", edit_user_registration_path %></p>
       <p><%= link_to "Bids Dashboard", professional_dashboard_path %></p>
       <p><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
-      <p><%= link_to "Settings", user_registration_path%></p>
-
     <% else %>
       <%= link_to "Login", new_user_session_path %>
       <%= link_to "Sign up", new_user_registration_path %>
