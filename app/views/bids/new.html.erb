@@ -1,2 +1,10 @@
-<h1>Bids#new</h1>
-<p>Find me in app/views/bids/new.html.erb</p>
+
+
+<div class = "container">
+  <h1>Enter a new bid for <%= @event.name %></h1>
+ <%= simple_form_for([@event, @bid]) do |f| %>
+  <%= f.input :price %>
+  <%= f.input :description %>
+  <%= f.submit %>
+ <% end %>
+</div>

@@ -11,16 +11,20 @@ class BidsController < ApplicationController
   end
 
   def new
-    @bid = Bid.new()
+    @event = Event.find(params[:event_id])
+    @bid = Bid.new
     authorize @bid
   end
 
   def create
+    @event = Event.find(params[:event_id])
     @bid = Bid.new(bid_params)
+    @bid.event = @event
+    @bid.user = current_user
     authorize @bid
     if @bid.save
       flash[:success] = "Bid saved!"
-      redirect_to event_path(@event.user)
+      redirect_to event_bid_path(@event, @bid)
     else
       render :new
     end
@@ -29,12 +33,12 @@ class BidsController < ApplicationController
   private
 
   def set_bid
-    @bid = Bid.find(params[:bid_id])
+    @bid = Bid.find(params[:id])
 
   end
 
   def bid_params
-     params.require(:bid).permit(:user_id, :event_id, :price, :description)
+     params.require(:bid).permit(:price, :description)
   end
 
   def edit

@@ -1,4 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/daitlzche/image/upload/v1542109468/basil-delicious-food-459469.jpg');">
+  <div class="logo_container">
+    <img src="https://res.cloudinary.com/daitlzche/image/upload/v1542197200/Snip20181114_4.png" alt="">
+  </div>
   <div class="button_container">
     <% if user_signed_in? %>
       <p class = "link"><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
@@ -9,13 +12,27 @@
     <% end %>
   </div>
   <div class="banner-content">
-    <%= form_tag events_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find an event"
-      %>
-    <% end %>
+  </div>
+  <div class="form_container">
+    <div class="form_wrapper" style="width: 343px; height: 100px; margin: 0 auto;">
+      <%= form_tag events_path, method: :get do %>
+        <%= text_field_tag :starts_at,
+        params[:starts_at],
+        class: "datepicker input_margin_1",
+        placeholder: "Start Date"%>
+        <%= text_field_tag :ends_at,
+        [:ends_at],
+        class: "datepicker input_margin_2",
+        placeholder: "End Date"%>
+
+        <%= text_field_tag :location,
+         params[:location],
+         placeholder: "Location",
+         class: "location_input input_margin_2",
+         id: "event_location" %>
+        <%= submit_tag "Search", class: " btn submit_button"%>
+      <% end %>
+    </div>
   </div>
 </div>
 <div class="container">
@@ -49,9 +66,6 @@
     </div>
   </div>
 </div>
-
-
-      <!-- insert <div class="card"> -->
 
 
 
