@@ -2,7 +2,7 @@ class BidsController < ApplicationController
   before_action :set_bid, only: [:show, :edit, :update, :destroy]
 
   def index
-    @event = policy_scope(Bid).order(created_at: :desc)
+    @bids = policy_scope(Bid).order(created_at: :desc)
   end
 
   def show
@@ -52,4 +52,5 @@ class BidsController < ApplicationController
   def destroy
     authorize @bid
   end
+
 end
