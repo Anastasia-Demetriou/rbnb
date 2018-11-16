@@ -8,4 +8,8 @@ class UsersController < ApplicationController
     authorize @user
   end
 
+  def index
+
+  end
+
 end
