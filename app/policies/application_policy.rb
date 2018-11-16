@@ -53,8 +53,8 @@ class ApplicationPolicy
     user.event_organiser
   end
 
-  def professional?
-    user.professional
-  end
+  # def professional?
+  #   user[:professional]
+  # end
 
 end

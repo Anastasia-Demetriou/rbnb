@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    @events = Event.all
     start_date = params[:starts_at].to_date
     end_date = params[:ends_at]
     location_search = params[:location]
@@ -12,6 +13,10 @@ class EventsController < ApplicationController
     if start_date && end_date
       filtered_events = location_events.where('date > ? AND date < ?', start_date, end_date)
       @events = policy_scope(filtered_events).order(created_at: :desc)
+
+    elsif location_events.empty?
+      @events = policy_scope(Event).order(created_at: :desc)
+
     else
       @events = policy_scope(location_events).order(created_at: :desc)
     end
@@ -19,6 +24,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @user = current_user
     authorize @event
   end
 
