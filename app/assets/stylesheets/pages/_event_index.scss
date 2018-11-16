@@ -34,6 +34,7 @@ a{
 .search_bar{
   border-bottom: 1px solid rgba(0,0,0,0.1);
   display: flex;
+  align-items: center;
   padding: 0px;
   margin-bottom: 50px;
   h3{
@@ -67,4 +68,19 @@ a{
   width: 40vw;
   display: flex;
   justify-content: space-around;
+}
+
+.filter_index_form{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .input{
+    margin: 0px;
+  }
+  #event_location{
+    margin: 0px;
+  }
+  .algolia-places{
+      width: 35%;
+    }
 }
