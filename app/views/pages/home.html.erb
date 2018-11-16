@@ -1,16 +1,4 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/daitlzche/image/upload/v1542109468/basil-delicious-food-459469.jpg');">
-  <div class="logo_container">
-    <%= cl_image_tag("logo_2.png") %>
-  </div>
-  <div class="button_container">
-    <% if user_signed_in? %>
-      <p class = "link"><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
-      <p class = "link"><%= link_to "Account", edit_user_registration_path %></p>
-    <% else %>
-      <p class = "link"><%= link_to "Login", new_user_session_path %></p>
-      <p class = "link"><%= link_to "Sign up", new_user_registration_path %></p>
-    <% end %>
-  </div>
   <div class="banner-content">
   </div>
   <div class="form_container">

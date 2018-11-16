@@ -1,10 +1,11 @@
 <div class="navbar-wagon">
   <a href="/" class="logo">
     <%= cl_image_tag("logo.png") %>
-
   </a>
 
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <% #if params[:action] == 'home' %>
+
     <% if user_signed_in? %>
       <%= link_to "Search Events", root_path %>
       <%= link_to "Logout", destroy_user_session_path, method: :delete %>
