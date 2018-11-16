@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2018_11_15_144445) do
     t.string "description"
     t.bigint "user_id"
     t.bigint "event_id"
+    t.boolean "accepted", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_bids_on_event_id"
@@ -35,7 +36,7 @@ ActiveRecord::Schema.define(version: 2018_11_15_144445) do
 
   create_table "events", force: :cascade do |t|
     t.string "name"
-    t.string "date"
+    t.date "date"
     t.string "event_type"
     t.string "location"
     t.string "description"

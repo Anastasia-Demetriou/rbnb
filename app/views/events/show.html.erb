@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="col-xs-12 col-lg-3 col-lg-offset-1 btn-container">
-      <% if policy(Bid).create? %>
+      <% if @user.professional? %>
         <%= link_to "Bid Now", new_event_bid_path(@event),class: "btn bid-now" %>
       <% end %>
     </div>
