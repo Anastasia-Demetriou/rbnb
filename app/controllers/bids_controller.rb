@@ -13,7 +13,7 @@ class BidsController < ApplicationController
   def new
     @event = Event.find(params[:event_id])
     @bid = Bid.new
-    authorize @bid
+    # authorize @bid
   end
 
   def create
