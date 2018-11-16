@@ -1,44 +1,51 @@
 <div class="container">
-  <h1 class ="mainheading">Dashboard</h1>
+  <h1 class ="mainheading">Bids Dashboard</h1>
   <div class="row">
     <div class="col-sm-6">
-      <h2 class="header">Your Bids</h2>
-      <% @events.each do |event| %>
-      <div class="event-card">
-        <% if event.event_type == "birthday" %>
-        <% elsif event.event_type == "dinner" %>
-        <% elsif event.event_type == "party" %>
-        <% end %>
-
-        <div class="event-info">
-          <%= link_to event.event_type, event_path(event), class: "type" %>
-          <p class= "location"> <%= event.location %></p>
-          <p class= "date"><%= event.date %></p>
-          <p class="description-style"><%= event.description %></p>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="subheadings">
+            <table>
+              <tr>
+                <th class="subsmall">Event</th>
+                <th class="subsmall">Location</th>
+                <th class="subsmall">Date</th>
+                <th class="sublarge">Description</th>
+              </tr>
+              <% @events.each do |event| %>
+                <% if event.event_type == "birthday" %>
+                <% elsif event.event_type == "dinner" %>
+                <% elsif event.event_type == "party" %>
+                <% end %>
+                <tr class="event-card">
+                  <td>
+                    <%= event.event_type %>
+                  </td>
+                  <td>
+                    <%= event.location %>
+                  </td>
+                  <td>
+                    <%= event.date %>
+                  </td>
+                  <td class= "description-sub">
+                    <%= event.description %>
+                  </td>
+                  <td>
+                    <%= link_to "View", event_path(event), class: "btn event-card-btn" %>
+                  </td>
+                </tr>
+              <% end %>
+            </table>
+            <!-- <p class="sub-type">Event</p>
+            <p class="sub-loc">Location</p>
+            <p class="sub-date">Date</p>
+            <p class="sub-descr">Description</p> -->
+          </div>
         </div>
       </div>
-      <% end %>
-    </div>
 
 
-<!--     <div class="col-sm-6">
-      <h2 class="header">Your Bookings</h2>
-      <% @bookings.each do |booking| %>
-      <div class="booking-card">
-        <div class="booking-info">
-          <h3><%= link_to booking.index, event_bid_bookings_show_path %></h3>
-          <p><%= booking.bid_id %></p>s
-          <p><%= booking.date %></p>
-        </div>
-        <%= link_to booking_path(event) do %>
-        <div class="event-link"></div>
-        <% end %>
       </div>
-      <% end %>
-    </div> -->
-  </div>
-</div>
-</div>
 
 
 
