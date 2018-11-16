@@ -5,9 +5,9 @@ class BidPolicy < ApplicationPolicy
     end
   end
 
-  def new?
-    professional?
-  end
+  # def new?
+  #   professional?
+  # end
 
 #   def show?
 #     record.user == user || record.event.user == user
