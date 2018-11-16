@@ -1,49 +1,82 @@
 
-.event-card {
+
+.subheadings {
   position: relative;
-  width:  1100px;
-  height: 200px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-  margin-top: 200px;
-  border-top:  solid 2px black;
-  border-bottom: solid 2px black;
-
-
-}
-.description-style {
-  min-width: 500px;
-  line-height: 20px;
-}
-.mainheading {
   text-align: center;
 }
 
-.location {
-  min-width: 200px;
-  text-align: center;
-
+table {
+ align: center;
 }
 
-.date {
+.subsmall {
   min-width: 200px;
-}
-.type {
+  margin: 25px;
+  padding: 20px;
   font-size: 14px;
+  font-family: 'Noto Sans', sans-serif;
+  font-color: #838383;
+}
+
+.sublarge {
+  min-width: 500px;
+  padding: 20px;
+  font-size: 14px;
+  font-family: 'Noto Sans', sans-serif;
+  font-color: #838383;
+}
+
+
+.event-card {
+  border-top:  solid 2px rgb(217, 217, 217);
+  border-bottom: solid 2px rgb(217, 217, 217);
+  margin: 50px;
+  color: rgb(77, 79, 83);
+  font-size: 12px;
+  }
+
+.event-card:hover{
+  border: 3px solid rgb(108, 99, 205);
+  transition: 0.5s ease-in-out;
+
+}
+
+.description-sub
+{
+  padding: 50px;
+
+}
+
+.bid_header {
+  margin-top: 50px;
+  font-family: 'Noto Sans', sans-serif;
+  color: #838383
+
+}
+
+.mainheading {
+  padding: 20px;
+  margin-top: 50px;
+  border-top:  solid 2px rgb(217, 217, 217);
+  border-bottom: solid 2px rgb(217, 217, 217);
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif;
+  font-color: #838383;
+}
+
+
+
+.type {
+
+  text-transform: capitalize;
+  width: 200px;
+  color: rgb(77, 79, 83);
+  font-size: 12px;
   text-align: center;
 }
 
 
-.event-info {
-  height: 2000px;
-  margin-right: 50px;
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-  min-width: 200px;
-  margin-left: 50px
-}
 
 
