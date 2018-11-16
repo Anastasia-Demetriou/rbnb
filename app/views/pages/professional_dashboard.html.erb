@@ -19,7 +19,7 @@
                 <% end %>
                 <tr class="event-card">
                   <td>
-                    <%= link_to event.event_type, event_path(event), class: "type" %>
+                    <%= event.event_type %>
                   </td>
                   <td>
                     <%= event.location %>
@@ -30,8 +30,11 @@
                   <td class= "description-sub">
                     <%= event.description %>
                   </td>
-                <% end %>
-              </tr>
+                  <td>
+                    <%= link_to "To The Page", event_path(event), class: "btn event-card-btn" %>
+                  </td>
+                </tr>
+              <% end %>
             </table>
             <!-- <p class="sub-type">Event</p>
             <p class="sub-loc">Location</p>
