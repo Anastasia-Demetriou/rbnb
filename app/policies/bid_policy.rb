@@ -5,8 +5,12 @@ class BidPolicy < ApplicationPolicy
     end
   end
 
+  def new?
+    professional?
+  end
+
   def show?
-   true
+    record.user == user || record.event.user == user
   end
 
   def update?
@@ -22,7 +26,7 @@ class BidPolicy < ApplicationPolicy
   end
 
 
-   private
+  private
 
   def professional?
     user.professional

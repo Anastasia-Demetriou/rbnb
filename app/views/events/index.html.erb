@@ -1,46 +1,60 @@
-<html>
-
-
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-  <% @events.each do |event|%>
-  <h1><%= event.name %></h1>
-<% end %>
-
-
-
-
-    <div class="navbar-wagon-item">
-        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar
-      </div>
-    </div
-  </div>
-
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Sign Up</a></li>
-        <li><a href="#">Log In</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <!-- insert <div class="card"> -->
+    <div class="col-xs-12">
+      <div class="search_bar">
+        <p class="no_padding">Filter Results:</p>
+        <div class="field_holder">
+          <div class="input_field">
+            Date
+          </div>
+          <div class="input_field">
+            Location
+          </div>
+          <div class="input_field">
+            Price Range
+          </div>
+          <div class="input_field">
+            Submit
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-xs-12 col-sm-4">
-      <!-- insert <div class="card"> -->
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <!-- insert <div class="card"> -->
+  </div>
+  <div class="cards_container">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
+        <div class="row ">
+          <% @events.each do |event| %>
+            <div class="col-xs-12 col-md-4">
+              <a href="/events/<%= event.id %>" class="card_link">
+                <div class="event_card">
+                  <% if event.event_type == "birthday" %>
+                    <%= cl_image_tag("undraw_birthday_cake_7df8.png",
+          width: 285, height: 200, crop: :fill)%>
+                  <% elsif event.event_type == "dinner" %>
+                    <%= cl_image_tag("undraw_eating_together_tjhx.png",
+          width: 285, height: 200, crop: :fill)%>
+                  <% elsif event.event_type == "party" %>
+                    <%= cl_image_tag("undraw_beer_celebration_3wc8.png",
+          width: 285, height: 200, crop: :fill)%>
+                  <% end %>
+                  <div class="card_description">
+                    <div class="card_text">
+                      <%= event.name %>
+                    </div>
+                    <div class="card_text">
+                      <i class="icon fas fa-map-marker-alt"></i><%= event.location %>
+                    </div>
+                    <div class="card_text">
+                      <i class="icon fas fa-users"></i><%= event.party_size %>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
-</html>
-

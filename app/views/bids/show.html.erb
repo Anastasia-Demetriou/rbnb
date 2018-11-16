@@ -1,2 +1,23 @@
-<h1>Bids#show</h1>
-<p>Find me in app/views/bids/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="main_div col-xs-12 col-md-8">
+      <div class="main_body">
+        <img src="https://res.cloudinary.com/alicezoepicot/image/upload/v1542208918/undraw_High_five_u364.png" style=" width:400px;">
+      </div>
+      <div class = "event_name">
+        <p>Your Bid is confirmed, see below your Event details</p>
+        <p>Your Event:<%= @bid.event.name %></p>
+        <p>Event Date:<%= @bid.event.date %></p>
+        <p>Type of Event:<%= @bid.event.event_type %></p>
+        <p>Party size:<%= @bid.event.party_size %></p>
+        <p>Service:<%= @bid.event.service %></p>
+        <p><%= @bid.event.description %></p>
+      </div>
+      <div class= "bid_details">
+        <p>Your price bid:<%= @bid.price %></p>
+        <p>Your bid description<%= @bid.description %></p>
+      </div>
+    </div>
+  </div>
+</div>
+

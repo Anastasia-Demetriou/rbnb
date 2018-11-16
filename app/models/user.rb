@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  attr_reader :professional
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -11,7 +10,7 @@ class User < ApplicationRecord
 
   validates_presence_of :first_name, :last_name, :password
   validates :email, uniqueness: { case_sensitive: false }
-  validates :service, presence: true, if: :is_professional?
+  # validates :service, presence: true, if: :is_professional?
 
 
   def is_professional?
