@@ -13,6 +13,10 @@ class EventsController < ApplicationController
     if start_date && end_date
       filtered_events = location_events.where('date > ? AND date < ?', start_date, end_date)
       @events = policy_scope(filtered_events).order(created_at: :desc)
+
+    elsif location_events.empty?
+      @events = policy_scope(Event).order(created_at: :desc)
+
     else
       @events = policy_scope(location_events).order(created_at: :desc)
     end
