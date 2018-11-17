@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: white;
-}
+
 
 /* Logo */
 .logo img{
@@ -24,6 +24,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  text-align: justify;
+  text-justify: inter-word;
+}
 
 }
 
